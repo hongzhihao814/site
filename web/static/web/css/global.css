@@ -1,0 +1,512 @@
+*::selection {
+    background-color: rgba(0, 0, 0, .2);
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 200px;
+}
+
+table th, td {
+    text-align: center;
+}
+
+a {
+    transition: all .15s;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+/**************通用**************/
+.m-logo {
+    height: 70px;
+}
+
+.m-jmb {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
+}
+
+.m-jmb .ct {
+    padding: 30px 15px;
+    margin: 30px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, .2);
+}
+
+.m-jmb hr{
+    width: 97.5%;
+    background-color: rgba(255, 255 ,255 , .5);
+}
+
+.u-qrcode, .u-top, .u-qrcode-ct {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+}
+
+.u-qrcode-ct .fa-close, .u-qrcode, .u-top {
+    cursor: pointer;
+}
+
+.u-qrcode i, .u-top i {
+    color: #fff;
+}
+
+.u-qrcode, .u-top {
+    width: 50px;
+    height: 50px;
+    right: 0;
+    bottom: 30%;
+    background-color: #fe3a4f;
+    opacity: 1;
+    z-index: 100;
+}
+
+.u-qrcode {
+    bottom: 35.5%;
+}
+
+.u-qrcode-ct {
+    width: 140px;
+    height: 180px;
+    right: 0;
+    bottom: 28%;
+    color: #fff;
+    background-image: -webkit-gradient(
+            linear,
+            left top,
+            right bottom,
+            from(#fe3a4f),
+            to(#d63746)
+    );
+    opacity: 0;
+    transition: opacity .15s, right .3s;
+}
+
+.u-top:hover, .u-qrcode:hover {
+    background-color: #d63746;
+}
+
+/*主导航栏*/
+.m-nav {
+    border-bottom: 4px solid;
+    border-image: -webkit-linear-gradient(
+            180deg,
+            #7d6cfb,
+            #fc3d53
+    ) 1 1;
+    transition: .3s all;
+    z-index: 100;
+}
+
+.m-nav .nav-link {
+    line-height: 45px;
+    width: 150px;
+    font-size: 20px;
+    color: #999;
+}
+
+.m-nav a:hover, .m-nav a.active:hover {
+    color: #000;
+}
+
+.m-nav a.active {
+    color: #000;
+}
+
+/*页脚*/
+.footer {
+    position: absolute;
+    bottom: 0;
+    min-height: 100px;
+}
+
+.footer img {
+    height: 65px;
+    width: 65px;
+}
+
+/*分页*/
+.m-pg .page-item a {
+    border: 1px solid rgba(0, 0, 0, .1);
+    color: #000;
+}
+
+.m-pg .page-item a:hover {
+    background-color: rgb(245, 245, 245);
+}
+
+.m-pg .page-item a.active {
+    color: #fff;
+    background-color: #fe3a4f;
+}
+
+/**************首页**************/
+.m-home-ct h3 a {
+    color: #444;
+}
+
+.m-home-ct h3 a:hover {
+    color: #fe3a4f;
+}
+
+.m-home-ct h3 i {
+    font-size: 22px;
+    padding-left: 10px;
+}
+
+/*轮播图*/
+.m-crs {
+    position: relative;
+    height: 400px;
+}
+
+.m-crs img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.m-crs li {
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+}
+
+.m-crs li.active {
+    background-color: #fe3a4f;
+}
+
+/*通知*/
+.m-ntc {
+    position: relative;
+    bottom: 0;
+    border-bottom: 1px solid rgba(240, 240, 240, 1);
+    overflow: hidden;
+}
+
+.m-ntc ul {
+    bottom: 0;
+    animation: loop 3s infinite;
+}
+
+.m-ntc .ntc-ct {
+    color: #000;
+}
+
+.m-ntc .ntc-ct:hover {
+    color: #fe3a4f;
+}
+
+/*内容-新闻*/
+.m-home-ct .card, .m-home-ct .card-img-top, .m-home-ct .btn {
+    border-radius: 0;
+}
+
+.m-news, .m-pd, .m-ebank {
+    padding: 40px 0 70px;
+}
+
+.m-news .card {
+    height: 240px;
+    transition: all .3s;
+}
+
+.m-news .card img {
+    object-fit: cover;
+    height: 238px;
+}
+
+.m-news .card-body {
+    position: absolute;
+    width: 100%;
+    top: 200px;
+    bottom: 0;
+    color: #fff;
+    background-color: rgba(0, 0, 0, .45);
+}
+
+.m-news .card:hover {
+    transform: scale(1.03, 1.03);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .4);
+}
+
+/*内容-服务*/
+.m-svc {
+    background-color: rgba(55, 61, 65, 1);
+}
+
+.m-svc .card {
+    border: 0;
+    color: #fff;
+    overflow: hidden;
+}
+
+.m-svc .card-img {
+    min-height: 400px;
+    object-fit: cover;
+    transition: all .6s;
+}
+
+.m-svc .card-img-overlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, .4);
+}
+
+.m-svc .card:hover .card-img {
+    transform: scale(1.3, 1.3);
+}
+
+/*内容-百科*/
+.m-pd {
+    background-color: rgba(251, 251, 251, 1);
+}
+
+.m-pd .nav {
+    border-bottom: 1px solid rgba(0, 0, 0, .15);
+}
+
+.m-pd .nav-link {
+    color: #444;
+}
+
+.m-pd .nav-link:hover, .m-pd a.active {
+    color: #fe3a4f;
+}
+
+/*内容-网银/手机银行*/
+.m-ebank figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(245, 245, 245, .5);
+    margin: 8px 0;
+    height: 250px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, .06);
+    transition: all .3s;
+}
+
+.m-ebank figure:hover {
+    transform: scale(1.06, 1.06);
+    box-shadow: 0 12px 16px rgba(0, 0, 0, .12);
+}
+
+/**************关于页**************/
+.m-abt-ct .m-pro, .m-abt-ct .m-fld {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.m-abt-ct h2::before {
+    content:"";
+    position: relative;
+    width: 20px;
+    height: 2px;
+    background-color: red;
+}
+
+.m-abt-ct .m-hnr {
+    background-color: rgba(249, 249, 249, 1);
+}
+
+.m-abt-ct .m-fld li {
+    margin-bottom: 10px;
+}
+
+.m-abt-ct .m-pro {
+    height: 560px;
+    background-image: -webkit-gradient(
+            linear,
+            left top,
+            right bottom,
+            from(#2F80ED),
+            to(#56CCF2)
+    ) !important;
+}
+
+.m-abt-ct .m-pro div::selection {
+    background-color: transparent !important;
+}
+
+.m-abt-ct .m-hnr img {
+    transition: all .4s;
+    height: 200px;
+    width: 320px;
+    margin: 15px 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .2);
+}
+
+.m-abt-ct .m-hnr img:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 18px 25px rgba(0, 0, 0, .35);
+}
+
+/**************新闻页**************/
+/*新闻页*/
+.m-news-ct .news-list {
+    border-top: 1px solid rgba(0, 0, 0, .1);
+}
+
+.m-news-ct .news-list a {
+    color: #555;
+}
+
+.m-news-ct .news-list a:hover {
+    color: #fe3a4f;
+}
+
+.m-news-ct .news-tt {
+    padding-left: .5em;
+    border-left: 8px solid #fe3a4f;
+}
+
+.m-news-ct img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.m-news-ct .u-close{
+    position: absolute;
+    margin-top: 30px;
+    left: 40%;
+}
+
+/**************产品业务**************/
+.m-svc-ct .card, .m-svc-ct .nav-link {
+    border-radius: 0;
+}
+
+.u-svc-name {
+    font-size: 20px;
+    color: #000;
+    background-color: rgba(245, 245, 245, .8);
+}
+
+#svc-list .card-body {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+}
+
+#svc-list .card-body a {
+    color: #444;
+}
+
+#svc-list .card-body a.active {
+    color: #fff;
+    background-color: #fe3a4f;
+    /*border-left: 15px solid #fe3a4f;*/
+}
+
+#svc-list .card-body a:hover, .u-svc-name:hover {
+    color: #fe3a4f;
+}
+
+#svc-list .card-body a.active:hover {
+    color: #fff;
+}
+
+.tab-pane h3 {
+    text-align: center;
+}
+
+.tab-content .tab-pane h5 {
+    margin-top: 35px;
+    margin-bottom: 15px;
+    padding-left: 12px;
+    border-left: 6px solid #fe3a4f;
+}
+
+table th[scope="row"] {
+    font-weight: normal;
+}
+
+/**************网点分布**************/
+#map {
+    margin-left: 0;
+    width: 76%;
+}
+
+.m-bran-ct .list-group-item {
+    border: 1px solid rgba(0, 0, 0, .1);
+    cursor: pointer;
+}
+
+.m-bran-ct .active {
+    background-color: #fe3a4f;
+}
+
+/*插件*/
+.timeline-container {
+    width: 100%;
+    height: 300px;
+    opacity: 0;
+    transition: all 1s;
+    margin-bottom: 150px;
+}
+
+.timeline-content {
+    height: 350px;
+    overflow: hidden;
+}
+
+.timeline-wrap {
+    position: relative;
+    transition: all 1s ease;
+}
+
+.timeline-bd, .timeline-axis, .axis-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.timeline-bd {
+    position: absolute;
+    width: 100%;
+    height: 350px;
+    text-align: center;
+}
+
+.timeline-axis {
+    height: 40px;
+    border-radius: 40px;
+}
+
+.axis-wrap {
+    position: relative;
+    margin-left: 200px;
+    transition: all .5s;
+}
+
+.timeline-axis a {
+    cursor: pointer;
+    margin-right: 30px;
+    font-size: 24px;
+    transition: all .3s;
+}
+
+.timeline-axis a.active, .timeline-axis a:hover {
+    color: #fe3a4f !important;
+    font-size: 34px;
+}

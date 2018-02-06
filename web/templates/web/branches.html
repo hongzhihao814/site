@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}
+    安徽休宁大地村镇银行-网点分布
+{% endblock title %}
+{% block content %}
+    <div class="m-bran-ct container-fluid px-0">
+        <div class="m-jmb" style="background: url({% static "web/img/branches/bg.jpg" %})">
+            <div class="ct container row">
+                <h1 class="display-5 col-sm-12">网点分布</h1>
+                <hr class="my-3">
+                <p class="lead col-sm-12">我行目前共设立四个网点，包括总行营业部、状元支行、五城支行、溪口支行。</p>
+            </div>
+        </div>
+        <div class="container d-flex flex-row mt-5">
+            <div class="list-group">
+                <div class="list-group-item list-group-item-action active">
+                    <h4 class="my-3">营业部</h4>
+                    <p class="mb-0"><i class="fa fa-phone"> 0559-7528004</i></p>
+                    <p class="mb-3"><i class="fa fa-map-marker"> 休宁县海阳镇萝宁街105号</i></p>
+                </div>
+                <div class="list-group-item list-group-item-action">
+                    <h4 class="my-3">状元支行</h4>
+                    <p class="mb-0"><i class="fa fa-phone"> 0559-7816333</i></p>
+                    <p class="mb-3"><i class="fa fa-map-marker"> 休宁县万安镇万新村诊所旁</i></p>
+                </div>
+                <div class="list-group-item list-group-item-action">
+                    <h4 class="my-3">五城支行</h4>
+                    <p class="mb-0"><i class="fa fa-phone"> 0559-7595551</i></p>
+                    <p class="mb-3"><i class="fa fa-map-marker"> 休宁县五城镇新街216号</i></p>
+                </div>
+                <div class="list-group-item list-group-item-action">
+                    <h4 class="my-3">溪口支行</h4>
+                    <p class="mb-0"><i class="fa fa-phone"> 0559-7581122</i></p>
+                    <p class="mb-3"><i class="fa fa-map-marker"> 休宁县溪口镇溪口街江潭路口</i></p>
+                </div>
+            </div>
+            <div class="container-fluid bg-white" id="map"></div>
+        </div>
+    </div>
+
+{% endblock content %}
+{% block script %}
+    <script type="text/javascript"
+            src="http://api.map.baidu.com/api?v=2.0&ak=TZjt5pZn3t9x4wtULmT03xkfN4PCBrUH"></script>
+    <script type="text/javascript">
+        var coordinate = [
+            [118.187909, 29.795676],
+            [118.226998, 29.79682],
+            [118.192041, 29.607655],
+            [118.017733, 29.690545]
+        ];
+        var map = new BMap.Map("map");
+        map.addControl(new BMap.NavigationControl());
+        map.addControl(new BMap.ScaleControl());
+        map.enableScrollWheelZoom(true);
+        $(document).ready(function () {
+            $('.list-group-item:first-child').click()
+        });
+        $('.list-group-item').each(function () {
+            $(this).click(function () {
+                var co = $(this).index();
+                var p = new BMap.Point(coordinate[co][0], coordinate[co][1]);
+                var marker = new BMap.Marker(p);
+                map.addOverlay(marker);
+                map.centerAndZoom(p, 19);
+                $(this).siblings().removeClass('active');
+                $(this).addClass('active');
+            })
+        });
+    </script>
+{% endblock script %}

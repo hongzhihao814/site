@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}
+    安徽休宁大地村镇银行-大地新闻
+{% endblock title %}
+{% block content %}
+    <div class="m-news-ct container-fluid px-0">
+        <div class="m-jmb" style="background: url({% static "web/img/news/bg-news.jpg" %})">
+            <div class="ct container row">
+                <h1 class="display-5 col-sm-12">大地新闻</h1>
+                <hr class="my-3">
+                <p class="lead col-sm-12">我行最新的新闻动态与服务公告。</p>
+            </div>
+        </div>
+        <div class="container row mx-auto mt-5">
+            <div class="m-sd container col-sm-12 col-md-3 mt-2 mb-5">
+                {% include 'widgets/side_bar.html' %}
+            </div>
+            <div class="container col">
+                <h3 class="news-tt mb-4">
+                    {% if tag == '新闻' %}
+                        新闻动态
+                    {% elif tag == '公告' %}
+                        服务公告
+                    {% endif %}
+                </h3>
+                <ul class="news-list list-unstyled pt-4">
+                    {% for article in articles %}
+                        <li class="news-item mb-4">
+                            <div>
+                                <a href="{{ article.get_absolute_url }}" target="_blank">{{ article.title }}</a>
+                                <span class="text-muted float-right">
+                                    {{ article.publish|date:"Y-m-d" }}
+                                </span>
+                            </div>
+                        </li>
+                    {% empty %}
+                        暂无内容
+                    {% endfor %}
+                </ul>
+                {% if is_paginated %}
+                    <nav class="m-pg float-right">
+                        <ul class="pagination pagination-md mt-4">
+                            {% if page_obj.has_previous %}
+                                <li class="page-item">
+                                    <a href="?page={{ page_obj.previous_page_number }}" class="page-link">上一页</a>
+                                </li>
+                            {% endif %}
+                            {% if first %}
+                                <li class="page-item">
+                                    <a href="?page=1" class="page-link">1</a>
+                                </li>
+                            {% endif %}
+                            {% if left_more %}
+                                <li class="page-item">
+                                    <a href="" class="page-link">...</a>
+                                </li>
+                            {% endif %}
+                            {% if left %}
+                                {% for page in left %}
+                                    <li class="page-item">
+                                        <a href="?page={{ page }}" class="page-link">{{ page }}</a>
+                                    </li>
+                                {% endfor %}
+                            {% endif %}
+                            <li class="page-item">
+                                <a href="" class="page-link active">{{ page_obj.number }}</a>
+                            </li>
+                            {% if right %}
+                                {% for page in right %}
+                                    <li class="page-item">
+                                        <a href="?page={{ page }}" class="page-link">{{ page }}</a>
+                                    </li>
+                                {% endfor %}
+                            {% endif %}
+                            {% if right_more %}
+                                <li class="page-item disabled">
+                                    <a href="#" class="page-link">...</a>
+                                </li>
+                            {% endif %}
+                            {% if last %}
+                                <li class="page-item">
+                                    <a href="?page={{ paginator.num_pages }}"
+                                       class="page-link">{{ paginator.num_pages }}</a>
+                                </li>
+                            {% endif %}
+                            {% if page_obj.has_next %}
+                                <li class="page-item">
+                                    <a href="?page={{ page_obj.next_page_number }}" class="page-link">下一页</a>
+                                </li>
+                            {% endif %}
+                        </ul>
+                    </nav>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock content %}

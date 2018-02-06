@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}
+    安徽休宁大地村镇银行-大地新闻
+{% endblock title %}
+{% block content %}
+    <div class="m-news-ct container mt-5">
+        <div class="row">
+            <div class="m-sd container col-sm-12 col-md-3 mt-2 mb-5">
+                {% include 'widgets/side_bar.html' %}
+            </div>
+            <div class="col-sm-12 col-md-9">
+                <div class="container text-center">
+                    <h3>{{ article.title }}</h3>
+                    <span>{{ article.publish }}</span>
+                    <div class="mt-5 lead d-flex flex-column align-items-center text-left">
+                        {{ article.body|safe }}
+                    </div>
+                </div>
+                <a class="u-close btn btn-danger text-white">阅读完毕 关闭页面</a>
+            </div>
+        </div>
+
+    </div>
+{% endblock content %}
+{% block script %}
+    <script>
+        var $cls = $('.u-close');
+        $cls.click(function () {
+            window.close();
+        })
+    </script>
+{% endblock script %}

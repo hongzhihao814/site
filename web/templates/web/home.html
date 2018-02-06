@@ -1,0 +1,173 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load home_tags %}
+{% load thumbnail %}
+{% block title %}
+    安徽休宁大地村镇银行-首页
+{% endblock title %}
+{% block content %}
+    <div class="m-crs carousel slide" id="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carousel" data-slide-to="0" class="active"></li>
+            {#            <li data-target="#carousel" data-slide-to="1"></li>#}
+            {#            <li data-target="#carousel" data-slide-to="2"></li>#}
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{% static "web/img/home/carousel/新年快乐.png" %}">
+            </div>
+        </div>
+    </div>
+
+    <div class="m-ntc container-fluid">
+        <div class="container">
+            <a class="my-auto text-danger" href="{% url 'web:notice' %}">
+                <i class="fa fa-volume-down fa-lg"></i>
+                最新公告:&emsp;
+                {% get_notice as ntcs %}
+                <span>
+                    <a class="ntc-ct" href="{{ ntcs.get_absolute_url }}">{{ ntcs.title }}</a>
+                </span>
+            </a>
+
+        </div>
+    </div>
+
+    <div class="m-home-ct container-fluid px-0">
+        <div class="m-news text-center">
+            <h3 class="mb-5">
+                <a href="{% url 'web:news' %}">
+                    新闻动态<i class="fa fa-chevron-circle-right"></i>
+                </a>
+            </h3>
+            <div class="container row px-0 mx-auto">
+                {% get_news as news %}
+                {% for new in news %}
+                    <a href="{{ new.get_absolute_url }}" class="col-md-12 col-lg-4 mb-2 pl-0 pr-2">
+                        <div class="card py-0">
+                            <img class="card-img-top" src="{% thumbnail new.image 300x238 crop %}"
+                                 alt="{{ new.title }}">
+                            <div class="card-body py-2 px-0 mx-0">
+                                <p class="card-text">{{ new.title }}</p>
+                            </div>
+                        </div>
+                    </a>
+                    {% empty %}
+                    暂无新闻动态
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="m-svc container-fluid">
+            <div class="container d-flex flex-row px-0 text-center">
+                <a class="card" href="{% url 'web:service' 'settlement-account' %}">
+                    <img class="card-img" src="{% static "web/img/home/service/bg-cards.gif" %}">
+                    <div class="card-img-overlay">
+                        <img src="{% static "web/img/home/service/icon-card.png" %}">
+                        <h4>个人结算业务</h4>
+                    </div>
+                </a>
+                <a class="card" href="{% url 'web:service' 'savings-account' %}">
+                    <img class="card-img" src="{% static "web/img/home/service/bg-coins.gif" %}">
+                    <div class="card-img-overlay">
+                        <img src="{% static "web/img/home/service/icon-coin.png" %}">
+                        <h4>个人储蓄业务</h4>
+                    </div>
+                </a>
+                <a class="card" href="{% url 'web:service' 'fml-loan' %}">
+                    <img class="card-img" src="{% static "web/img/home/service/bg-loan.gif" %}">
+                    <div class="card-img-overlay">
+                        <img src="{% static "web/img/home/service/icon-loan.png" %}">
+                        <h4>特色贷款业务</h4>
+                    </div>
+                </a>
+                <a class="card" href="{% url 'web:service' 'p-ebank' %}">
+                    <img class="card-img" src="{% static "web/img/home/service/bg-ebank.gif" %}">
+                    <div class="card-img-overlay">
+                        <img src="{% static "web/img/home/service/icon-ebank.png" %}">
+                        <h4>电子银行业务</h4>
+                    </div>
+                </a>
+                <a class="card" href="{% url 'web:service' '' %}">
+                    <img class="card-img" src="{% static "web/img/home/service/bg-other.gif" %}">
+                    <div class="card-img-overlay">
+                        <img src="{% static "web/img/home/service/icon-more.png" %}">
+                        <h4>查看所有业务</h4>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="m-pd container-fluid text-center">
+            <h3 class="mb-4">
+                <a href="{% url 'web:service' 'vb-info' %}">
+                    银行百科<i class="fa fa-chevron-circle-right"></i>
+                </a>
+            </h3>
+            <div class="container d-flex flex-column align-items-center">
+                <ul class="nav container-fluid d-flex justify-content-center mb-4">
+                    <li class="nav-item">
+                        <a class="nav-link text-center active lead" data-toggle="tab" href="#pd-vb">
+                            <i class="fa fa-bank"></i>
+                            什么是村镇银行？
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-center lead" data-toggle="tab" href="#pd-si">
+                            <i class="fa fa-file-text"></i>
+                            什么是存款保险制度？
+                        </a>
+                    </li>
+                </ul>
+                <div class="tab-content text-left">
+                    <div class="tab-pane fade show active" id="pd-vb">
+                        <p class="lead">&emsp;&emsp;村镇银行是指经中国银行业监督管理委员会依据有关法律、法规批准，由境内外金融机构、境内非金融机构企业法人、境内自然人出资，在农村地区设立的主要为当地农民、农业和农村经济发展提供金融服务的银行业金融机构。
+                            村镇银行的建立，有效的填补了农村地区金融服务的空白，增加了农村地区的金融支持力度。</p>
+                        <p class="lead">&emsp;&emsp;村镇银行可经营吸收公众存款，发放短期、中期和长期贷款，办理国内结算，办理票据承兑与贴现，从事同业拆借，从事银行卡业务，代理发行、代理兑付、承销政府债券，代理收付款项及代理保险业务以及经银行业监督管理机构批准的其他业务。
+                            按照国家有关规定，村镇银行还可代理政策性银行、商业银行和保险公司、证券公司等金融机构的业务。</p>
+                    </div>
+                    <div class="tab-pane fade" id="pd-si">
+                        <p class="lead">&emsp;&emsp;存款保险制度一种金融保障制度，是指由符合条件的各类存款性金融机构集中起来建立一个保险机构，各存款机构作为投保人按一定存款比例向其缴纳保险费，建立存款保险准备金，当成员机构发生经营危机或面临破产倒闭时，存款保险机构向其提供财务救助或直接向存款人支付部分或全部存款，从而保护存款人利益，维护银行信用，稳定金融秩序的一种制度。</p>
+                        <p class="lead">&emsp;&emsp;《存款保险条例》是为建立和规范存款保险制度，依法保护存款人的合法权益，及时防范和化解金融风险，维护金融稳定制定，由中华人民共和国国务院于2015年2月17日发布，自2015年5月1日起施行。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="m-ebank container-fluid d-flex flex-column align-items-center">
+            <h3 class="text-center mb-5">网上银行与手机银行</h3>
+            <div class="container d-flex flex-row justify-content-around text-center row">
+                <figure class="figure col-sm-12 col-lg-2">
+                    <img src="{% static 'web/img/home/icon-person.png' %}" class="figure-img img-fluid rounded"
+                         alt="个人版网银">
+                    <p class="lead">个人版网上银行</p>
+                    <a href="https://ebank.ahrcu.com:8443/pweb/prelogin.do?LoginType=R&_locale=zh_CN&BankId=9999"
+                       class="btn btn-danger" target="_blank">登陆网银 <i class="fa fa-external-link"></i></a>
+                </figure>
+                <figure class="figure col-sm-12 col-lg-2">
+                    <img src="{% static 'web/img/home/icon-company.png' %}" class="figure-img img-fluid rounded"
+                         alt="企业版网银">
+                    <p class="lead">企业版网上银行</p>
+                    <a href="https://ebank.ahrcu.com:8443/eweb/SelfUpdCertLoginPre.do?LoginType=R&_locale=zh_CN&BankId=9999"
+                       class="btn btn-danger" target="_blank">登陆网银 <i class="fa fa-external-link"></i></a>
+                </figure>
+                <figure class="figure col-sm-12 col-lg-2">
+                    <img src="{% static 'web/img/home/iphone.png' %}" class="figure-img img-fluid rounded"
+                         alt="苹果版手机银行">
+                    <p class="lead">苹果版手机银行</p>
+                    <button type="button" class="btn btn-outline-info disabled"><i class="fa fa-apple fa-lg"></i>
+                        扫码下载
+                    </button>
+                </figure>
+                <figure class="figure col-sm-12 col-lg-2">
+                    <img src="{% static 'web/img/home/andriod.png' %}" class="figure-img img-fluid rounded"
+                         alt="安卓版手机银行">
+                    <p class="lead">安卓版手机银行</p>
+                    <button type="button" class="btn btn-outline-info disabled"><i class="fa fa-android fa-lg"></i>
+                        扫码下载
+                    </button>
+                </figure>
+            </div>
+        </div>
+    </div>
+{% endblock %}

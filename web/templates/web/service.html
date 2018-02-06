@@ -1,0 +1,407 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}
+    安徽休宁大地村镇银行-产品业务
+{% endblock title %}
+{% block content %}
+    <div class="m-svc-ct container-fluid px-0">
+        <div class="m-jmb" style="background: url({% static "web/img/services/bg-svc.jpg" %})">
+            <div class="ct container row">
+                <h1 class="display-5 col-sm-12">产品业务</h1>
+                <hr class="my-3">
+                <p class="lead col-sm-12">我们竭诚为您提供最优质的服务。</p>
+            </div>
+        </div>
+        <div class="container row mt-5 mx-auto">
+            <div class="col-md-3 col-sm-12 mb-5 text-dark" id="svc-list">
+                <div class="card">
+                    <a class="u-svc-name card-header" data-toggle="collapse" href="#svc-savings">
+                        存款业务<i class="fa fa-plus-square-o float-right"></i>
+                    </a>
+                    <div id="svc-savings" class="collapse show" data-parent="#svc-list">
+                        <div class="card-body nav">
+                            <a class="nav-link active" data-toggle="pill" href="#savings-account">
+                                人民币储蓄
+                            </a>
+                            <a class="nav-link" data-toggle="pill" href="#settlement-account">
+                                个人结算账户
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card border-top-0">
+                    <a class="u-svc-name card-header" data-toggle="collapse" href="#svc-loan">
+                        贷款业务<i class="fa fa-plus-square-o float-right"></i>
+                    </a>
+                    <div id="svc-loan" class="collapse show" data-parent="#svc-list">
+                        <div class="card-body nav">
+                            <a class="nav-link" data-toggle="pill" href="#fml-loan">家庭幸福贷</a>
+                            <a class="nav-link" data-toggle="pill" href="#indi-loan">个体工商户信用贷</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card border-top-0">
+                    <a class="u-svc-name card-header" data-toggle="collapse" href="#svc-ebank">
+                        电子银行业务<i class="fa fa-plus-square-o float-right"></i>
+                    </a>
+                    <div id="svc-ebank" class="collapse show" data-parent="#svc-list">
+                        <div class="card-body nav">
+                            <a class="nav-link" data-toggle="pill" href="#p-ebank">个人网上银行</a>
+                            <a class="nav-link" data-toggle="pill" href="#c-ebank">企业网上银行</a>
+                            <a class="nav-link" data-toggle="pill" href="#phone-ebank">手机银行</a>
+                            <a class="nav-link" data-toggle="pill" href="#msg-ebank">短信通</a>
+                            <a class="nav-link" data-toggle="pill" href="#atm-ebank">自助银行</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card border-top-0">
+                    <a class="u-svc-name card-header" data-toggle="collapse" href="#svc-info">
+                        银行百科<i class="fa fa-plus-square-o float-right"></i>
+                    </a>
+                    <div id="svc-info" class="collapse show" data-parent="#svc-list">
+                        <div class="card-body nav">
+                            <a class="nav-link" data-toggle="pill" href="#vb-info">村镇银行</a>
+                            <a class="nav-link" data-toggle="pill" href="#insu-info">存款保险制度</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-content col-md-9">
+                <div class="tab-pane lead active show" id="savings-account">
+                    <h3>人民币储蓄</h3>
+                    <h5>活期储蓄</h5>
+                    <p>&emsp;&emsp;活期储蓄指不约定存期、客户可随时存取、存取金额不限的一种储蓄方式。活期储蓄是银行最基本、常用的存款方式，客户可随时存取款，自由、灵活调动资金。活期储蓄以1元为起存点，开户时由银行发给存折，凭折存取，每年结算一次利息。
+                        活期储蓄适合于个人生活待用款和闲置现金款，以及商业运营周转资金的存储。
+                    </p>
+                    <h5>定期储蓄</h5>
+                    <p>&emsp;&emsp;即事先约定存入时间，存入后，期满方可提取本息的一种储蓄。它的积蓄性较高，是一项比较稳定的信贷资金来源。定期储蓄的开户起点、存期长短、存取时间和次数、利率高低等均因储蓄种类不同而有所区别。</p>
+                    <h5>我行整存整取定期存款利率表</h5>
+                    <span class="text-muted float-right">单位%</span>
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th scope="col">整存整取</th>
+                            <th scope="col">基准利率</th>
+                            <th scope="col">我行利率</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th scope="row">三个月</th>
+                            <td>1.10</td>
+                            <td>1.463</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">六个月</th>
+                            <td>1.30</td>
+                            <td>1.729</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">一年</th>
+                            <td>1.50</td>
+                            <td>2.04</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">二年</th>
+                            <td>2.10</td>
+                            <td>2.94</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">三年</th>
+                            <td>2.75</td>
+                            <td>3.85</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">五年</th>
+                            <td>2.75</td>
+                            <td>4.60</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tab-pane lead" id="settlement-account">
+                    <h3>个人结算账户</h3>
+                    <h5>基本介绍</h5>
+                    <p>&emsp;&emsp;个人结算账户是指个人专门的账户用来办理转账汇款、刷卡消费、投资、贷款等各项支付结算业务。个人银行结算账户是指个人客户凭个人有效身份证件以自然人名称开立的，用于办理资金收付结算的人民币活期存款账户。</p>
+                    <h5>与储蓄账户的差异</h5>
+                    <p>&emsp;&emsp; 相同点：</p>
+                    <ol>
+                        <li>存取现金。</li>
+                        <li>获得利息收入（结算账户存款利率同活期储蓄账户）。</li>
+                        <li>本人名下的个人结算账户和货期储蓄账户之间可以相互转账。</li>
+                    </ol>
+                    <p>&emsp;&emsp;不同点：</p>
+                    <ol>
+                        <li>办理对外的资金转出或接受外部的资金转入时，只能通过结算账户办理。</li>
+                    </ol>
+                    <h5>如何开立个人结算账户</h5>
+                    <p>&emsp;&emsp;本人携带相关证件到我行网点，填写开户申请书，出示有效身份证件，开立个人结算账户。</p>
+                    <h5>开立个人银行结算账户应出具的证明文件</h5>
+                    <ol>
+                        <li>中国居民，应出具居民身份证或临时身份证。</li>
+                        <li>中国人民解放军军人，应出具军人身份证件。</li>
+                        <li>中国人民武装警察，应出具武警身份证件。</li>
+                        <li>香港、澳门居民，应出具港澳居民往来内地通行证。台湾居民，应出具台湾居民来往大陆通行证或者其他有效旅行证件。</li>
+                        <li>外国公民，应出具护照。</li>
+                        <li>法律、法规和国家有关文件规定的其他有效证件。按规定，还可要求申请人出具户口簿、驾驶执照、护照等有效证件。</li>
+                    </ol>
+                </div>
+
+                <div class="tab-pane lead" id="fml-loan">
+                    <h3>家庭幸福贷</h3>
+                    <h5>产品说明</h5>
+                    <p>&emsp;&emsp;面向个体工商户、微小企业主等发放的以其家庭成员提供第三方担保的，用以满足其经营用流动资金需求。</p>
+                    <h5>服务对象</h5>
+                    <p>&emsp;&emsp;持续经营三年以上的个体工商户、为小企业主，年龄18至60周岁。</p>
+                    <h5>产品特色</h5>
+                    <p>&emsp;&emsp; 一次授信、随用随贷、余额控制、周转使用</p>
+                    <h5>申请条件</h5>
+                    <ol>
+                        <li>具有完全民事行为能力。</li>
+                        <li>经营项目符合国家政策,证照齐全、合法经营。</li>
+                        <li>有固定的经营场所和正常的经营收入。</li>
+                        <li>我行规定的其他条件。</li>
+                    </ol>
+                    <h5>授信期限</h5>
+                    <p>&emsp;&emsp;1年（含）</p>
+                    <h5>授信额度</h5>
+                    <p>&emsp;&emsp;根据经营户的经济实力和资金需求及担保人的担保能力，合理确定额度，原则上最高不超过30万元。</p>
+                    <h5>还款方式</h5>
+                    <p>&emsp;&emsp;按月结息、利随本清或分期归还。</p>
+                </div>
+                <div class="tab-pane lead" id="indi-loan">
+                    <h3>个体工商户信用贷款</h3>
+                    <h5>产品说明</h5>
+                    <p>&emsp;&emsp;面向个体工商户、微小企业主等发放的信用贷款，用以满足其经营用流动资金需求的贷款。</p>
+                    <h5>服务对象</h5>
+                    <p>&emsp;&emsp;持续经营三年以上的个体工商户、微小企业主，年龄18至60周岁。</p>
+                    <h5>产品特色</h5>
+                    <p>&emsp;&emsp;一次授信、随用随贷、余额控制、周转使用。</p>
+                    <h5>申请条件</h5>
+                    <ol>
+                        <li>具有完全民事行为能力。</li>
+                        <li>经营项目符合国家政策,证照齐全、合法经营。</li>
+                        <li>有固定的经营场所和正常的经营收入。</li>
+                        <li>我行规定的其他条件。</li>
+                    </ol>
+                    <h5>授信期限</h5>
+                    <p>&emsp;&emsp;1-2年（含）。</p>
+                    <h5>授信额度</h5>
+                    <p>&emsp;&emsp;根据经营户的经济实力和资金需求，原则上最高不超过10万元。</p>
+                    <h5>还款方式</h5>
+                    <p>&emsp;&emsp;按月结息、利随本清或分期归还。</p>
+                </div>
+
+                <div class="tab-pane lead" id="p-ebank">
+                    <h3>个人网上银行</h3>
+                    <h5>主要功能</h5>
+                    <p>&emsp;&emsp;账户管理、 转账汇款、定活互转、网银互联、自助缴费、贷款管理、个人设置以及功能申请等业务功能。</p>
+                    <h5>账户管理</h5>
+                    <ol>
+                        <li>可以通过该交易对关联账户进行设置。</li>
+                        <li>可以查询自己所有的关联账户的余额及交易明细并提供回单打印。</li>
+                    </ol>
+                    <h5>转账汇款</h5>
+                    <p>&emsp;&emsp;客户根据网银结算渠道选择不同的汇款方式进行系统内转账、跨行汇款进行资金划拨。</p>
+                    <h5>定活互转</h5>
+                    <p>&emsp;&emsp;用于客户对通知存款的通知与取消管理，以及活期转账和定期账户之间的互转。</p>
+                    <h5>网银互联</h5>
+                    <p>&emsp;&emsp;利用人行的“网上银行跨行支付系统”签约本行或他行查询、付款协议，待协议生效后，可以进行查询他行账户余额及明细并进行跨行收款。</p>
+                    <h5>自助缴费</h5>
+                    <p>&emsp;&emsp;客户根据缴费业务进行缴费签约，然后再根据已签约的缴费项目进行缴费。</p>
+                    <h5>贷款管理</h5>
+                    <ol>
+                        <li>
+                            易贷卡：具备借记卡基本功能，且加载小额授信自助办理贷款、同时享受联盟商户优惠折扣、保险保障等个性化金融特色服务金农系列银行卡产品
+                            。
+                        </li>
+                        <li>一般贷款：客户在安徽省农村合作金融机构办理的一般贷款，系统支持查询最近五年未结清的一般贷款基本信息，并且提供自助还款。</li>
+                    </ol>
+                    <h5>个人设置</h5>
+                    <p>&emsp;&emsp;客户可以通过该交易对个人信息修改以及个性化设置。</p>
+                    <h5>功能申请</h5>
+                    <p>&emsp;&emsp;客户通过网上银行对电子银行业务其他产品的签约和设置。</p>
+                </div>
+                <div class="tab-pane lead" id="c-ebank">
+                    <h3>企业网上银行</h3>
+                    <h5>主要功能</h5>
+                    <p>&emsp;&emsp;账户查询 、转账汇款、代收代付、通知存款、自助缴费、集团服务、贷款管理、支付管理 、交易授权及信息管理等业务功能。</p>
+                    <h5>账户查询</h5>
+                    <p>&emsp;&emsp;客户可以通过该交易对所关联账户进行查询账户余额及交易明细并提供回单打印。</p>
+                    <h5>转账汇款</h5>
+                    <p>&emsp;&emsp;客户根据网银结算渠道选择不同的汇款方式进行系统内转账、跨行汇款以及企业内部进行资金划拨。</p>
+                    <h5>通知存款</h5>
+                    <p>&emsp;&emsp;用于客户对关联的通知存款账户办理通知手续及取消通知。</p>
+                    <h5>代收代付</h5>
+                    <ol>
+                        <li>代发工资: 按照柜面签约协议及约定规则提交代发工资的文件，办理时间为每天7:30至17:30。</li>
+                        <li>自助缴费: 客户根据缴费业务进行缴费签约，然后再根据已签约的缴费项目进行缴费。</li>
+                        <li>报销管理: 为企业增加对部门及员工信息的管理，方便本行内员工费用报销。另外费用报销不受批处理时间实时处理；也不受笔数限制，但是费用报销金额累计网银限额内。</li>
+                    </ol>
+                    <h5>贷款管理</h5>
+                    <p>&emsp;&emsp;一般贷款：客户在安徽省农村合作金融机构办理的 一般贷款，系统支持查询最近五年未结清的一般贷款基本信息，并且提供自助还款。</p>
+                    <h5>贷款管理</h5>
+                    <ol>
+                        <li>
+                            易贷卡:
+                            安徽省农村合作金融机构在中国银联推出的“福农卡”基础上，精心打造的一款具备借记卡基本功能，且加载小额授信自助办理贷款、同时享受联盟商户优惠折扣、保险保障等个性化金融特色服务金农系列银行卡产品
+                            。
+                        </li>
+                        <li>一般贷款: 客户在安徽省农村合作金融机构办理的一般贷款，系统支持查询最近五年未结清的一般贷款基本信息，并且提供自助还款。</li>
+                    </ol>
+                    <h5>集团服务</h5>
+                    <p>&emsp;&emsp;
+                        通过网上银行管理平台为集团母、子公司建立账户关系，待授权协议生效后，能给企业客户提供网上银行集团内部资金查询、上划、下拨等业务。能满足企业客户需求通过网银实施零余额账户资金划拨，有效合理地运用资金。
+                    </p>
+                    <h5>支付管理</h5>
+                    <ol>
+                        <li>
+                            电子支付:为客户提供的网上即时付款服务。通过与安徽农金签约的特约商户所提供的商品，即可进行网上消费。在电子支付管理模块的“签约信息管理”功能中签约开通，并设置支付额度，并在“待支付订单信息”功能中查询并支付
+                            。
+                        </li>
+                        <li>商户管理:为在安徽农金发展的特约商户提供的信息及账务管理。</li>
+                    </ol>
+                </div>
+                <div class="tab-pane lead" id="phone-ebank">
+                    <h3>手机银行</h3>
+                    <h5>主要功能</h5>
+                    <p>&emsp;&emsp;账户管理、转账汇款、账单支付、定活互转、无卡取现、安全中心、联系我们等功能模块。</p>
+                    <h5>主要版本</h5>
+                    <ol>
+                        <li>iPhone版手机银行。</li>
+                        <li>Android版手机银行。</li>
+                        <li>贴膜版手机银行。</li>
+                        <li>SWP-SD版手机银行。</li>
+                    </ol>
+                    <h5>开通方法</h5>
+                    <ol>
+                        <li>iPhone版扫码下载。</li>
+                        <li>Android版扫码下载。</li>
+                        <li>客户开通贴膜版手机银行、SWP-SD版手机银行业务时，需本人携带有效居民身份证及金农卡到我行的营业网点办理签约手续，领取手机银行贴膜卡/SWP-SD卡。</li>
+                    </ol>
+                </div>
+                <div class="tab-pane lead" id="msg-ebank">
+                    <h3>短信通服务</h3>
+                    <h5>主要功能</h5>
+                    <p>&emsp;&emsp;个人客户</p>
+                    <ol>
+                        <li>动账通知、动账与余额通知。</li>
+                        <li>定期储蓄存款到期通知、定期储蓄存款自动转存通知。</li>
+                        <li>贷款放款通知、贷款到期通知、贷款逾期通知、贷款欠息通知、按揭类贷款自动还款余额预警通知等。</li>
+                    </ol>
+                    <p>&emsp;&emsp;企业客户</p>
+                    <ol>
+                        <li>动账通知。</li>
+                        <li>贷款放款通知、贷款到期通知、贷款逾期通知、贷款欠息通知等。</li>
+                    </ol>
+                    <h5>办理手续</h5>
+                    <p>&emsp;&emsp;个人客户</p>
+                    <ol>
+                        <li>本人携带二代有效身份证件及金农卡我行营业机构柜面申请开通、变更、注销短信通业务。</li>
+                        <li>已开通网上银行专业版的客户可直接在网上银行专业版申请。</li>
+                    </ol>
+                    <p>&emsp;&emsp;企业客户</p>
+                    <ol>
+                        <li>
+                            携带营业执照、税务登记证、组织机构代码证、法人身份证原件及复印件、经办人身份证原件及复印件、被代理人授权委托书、预留银行印鉴等其他相关电子银行服务申请资料到账户开户机构申请开通、变更、注销短信通业务
+                            。
+                        </li>
+                        <li>已开通网上银行专业版的客户可直接在网上银行专业版申请。</li>
+                    </ol>
+                </div>
+                <div class="tab-pane lead" id="atm-ebank">
+                    <h3>自助银行</h3>
+                    <h5>主要功能</h5>
+                    <p>&emsp;&emsp;取款机</p>
+                    <ol>
+                        <li>查询、取款（有卡取款、无卡取款）。</li>
+                        <li>转账（行内转账、跨行转账）。</li>
+                        <li>金农易贷福农卡放款。</li>
+                        <li>电子现金充值（行内指定账户充值、非指定账户充值，跨行指定账户充值）。</li>
+                        <li>非接IC卡等功能。</li>
+                    </ol>
+                    <p>&emsp;&emsp;存取款一体机</p>
+                    <ol>
+                        <li>查询、存款（有卡存款、无卡存款）。</li>
+                        <li>取款（有卡取款、无卡取款）。</li>
+                        <li>转账（行内转账、跨行转账）。</li>
+                        <li>金农易贷福农卡放款。</li>
+                        <li>电子现金充值（行内指定账户充值、非指定账户充值，跨行指定账户充值）。</li>
+                        <li>冠字号打印。</li>
+                        <li>非接IC卡等功能。</li>
+                    </ol>
+                </div>
+
+                <div class="tab-pane lead" id="vb-info">
+                    <h3>村镇银行</h3>
+                    <h5>基本介绍</h5>
+                    <p>&emsp;&emsp;
+                        村镇银行是指经中国银行业监督管理委员会依据有关法律、法规批准，由境内外金融机构、境内非金融机构企业法人、境内自然人出资，在农村地区设立的主要为当地农民、农业和农村经济发展提供金融服务的银行业金融机构。
+                        村镇银行的建立，有效的填补了农村地区金融服务的空白，增加了农村地区的金融支持力度。</p>
+                    <h5>机构职能</h5>
+                    <p>&emsp;&emsp;
+                        村镇银行可经营吸收公众存款，发放短期、中期和长期贷款，办理国内结算，办理票据承兑与贴现，从事同业拆借，从事银行卡业务，代理发行、代理兑付、承销政府债券，代理收付款项及代理保险业务以及经银行业监督管理机构批准的其他业务。
+                        按照国家有关规定，村镇银行还可代理政策性银行、商业银行和保险公司、证券公司等金融机构的业务。</p>
+                    <h5>机构特点</h5>
+                    <p>&emsp;&emsp;
+                        村镇银行主要为当地农民、农业和农村经济发展提供金融服务。以往，在中国农村只有农村信用社和邮政储蓄两种金融主体，金融服务的水平越来越无法满足农民的需求，因此建设村镇银行成为监管层大力推动的目标。</p>
+                    <p>&emsp;&emsp;
+                        在经营范围方面，村镇银行的功能相当齐全。根据规定，村镇银行可以吸收公众存款，发放短、中、长期贷款，办理国内结算，办理票据承兑与贴现，从事同业拆借、银行卡业务，代理发行、兑付、承销政府债券，代理收付款项及保险业务和银监会批准的其他业务。</p>
+                    <p>&emsp;&emsp;
+                        村镇银行作为新型银行业金融机构的主要试点机构，拥有机制灵活、依托现有银行金融机构等优势，自2007年以来取得了快速的发展，对我国农村金融市场供给不足、竞争不充分的局面起到了很大的改善作用。</p>
+                </div>
+                <div class="tab-pane lead" id="insu-info">
+                    <h3>存款保险制度</h3>
+                    <h5>基本介绍</h5>
+                    <p>&emsp;&emsp;存款保险制度是一种金融保障制度，是指由符合条件的各类存款性金融机构集中起来建立一个保险机构，各存款机构作为投保人按一定存款比例向其缴纳保险费，建立存款保险准备金，当成员机构发生经营危机或面临破产倒闭时，存款保险机构向其提供财务救助或直接向存款人支付部分或全部存款，从而保护存款人利益，维护银行信用，稳定金融秩序的一种制度。</p>
+                    <h5>存款保险条例</h5>
+                    <p>&emsp;&emsp;《存款保险条例》是为建立和规范存款保险制度，依法保护存款人的合法权益，及时防范和化解金融风险，维护金融稳定制定，由中华人民共和国国务院于2015年2月17日发布，自2015年5月1日起施行。</p>
+                    <h5>为什么要制定条例</h5>
+                    <p>&emsp;&emsp;存款保险制度是市场经济条件下保护存款人利益的重要措施，是金融安全网的重要组成部分。所谓存款保险，是指吸收存款的银行业金融机构（统称投保机构）交纳保费形成存款保险基金，当投保机构经营出现问题时，存款保险基金管理机构依照规定使用存款保险基金对存款人进行及时偿付，并采取必要措施维护存款以及存款保险基金安全的制度。</p>
+                    <p>&emsp;&emsp;建立存款保险制度，有利于完善我国金融安全网，更好地保护存款人的利益，维护金融市场和公众对我国银行体系的信心，进一步理顺政府和市场的关系，深化金融改革，维护金融稳定，促进我国金融体系健康发展。制定条例，目的是为建立和规范存款保险制度提供明确的法律依据。</p>
+                    <h5>存款保险的保障范围</h5>
+                    <p>&emsp;&emsp;为有效保障存款人的利益，保证存款保险制度的公平性和合理性，促进银行业公平竞争，条例规定的存款保险具有强制性。在我国境内设立的吸收存款的银行业金融机构，包括商业银行（含外商独资银行和中外合资银行）、农村合作银行、农村信用合作社、村镇银行等，都应当参加存款保险。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+{% block script %}
+    <script>
+        $(document).ready(function () {
+            var $target = window.location.pathname.slice(window.location.pathname.indexOf('/', 8) + 1);
+            if ($target.length >= 1) {
+                $(".card-body a").each(function () {
+                    if ($(this).attr("href").slice(1) === $target) {
+                        $(this).addClass("active");
+                    }
+                    else {
+                        $(this).removeClass("active");
+                    }
+                });
+                $(".tab-pane").each(function () {
+                    if ($(this).attr("id") === $target.toString()) {
+                        $(this).addClass('active show');
+                    }
+                    else {
+                        $(this).removeClass("active show");
+                    }
+                });
+            }
+        });
+
+        $links = $(".card-body a");
+        $links.click(mouseClick);
+
+        function mouseClick() {
+            $links.each(function () {
+                $(this).removeClass('active');
+            });
+            $(this).addClass('active');
+            $(".tab-pane").each(function () {
+                $(this).removeClass("active show");
+            });
+            $("#" + $(this).attr("href").slice(1)).addClass("active show");
+        }
+    </script>
+{% endblock script %}
